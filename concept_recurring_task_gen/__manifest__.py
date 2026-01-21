@@ -12,7 +12,7 @@
     'author': "Concept Solutions LLC",
     'website': "https://www.csloman.com/",
     'category': 'Project',
-    'version': '17.0.1.0.4',
+    'version': '17.0.1.0.5',
     'depends': ['project'], 
     'data': [
         'views/project_task_views.xml',
@@ -23,7 +23,5 @@
     'installable': True,
     'application': False,
     'license': 'OPL-1',
-    'price': 360.00,
-    'currency': 'USD',
     'images': ['static/description/banner.png'],
 }
