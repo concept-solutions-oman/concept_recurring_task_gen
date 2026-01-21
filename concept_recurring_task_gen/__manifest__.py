@@ -12,7 +12,7 @@
     'author': "Concept Solutions LLC",
     'website': "https://www.csloman.com/",
     'category': 'Project',
-    'version': '17.0.1.0.1',
+    'version': '17.0.1.0.3',
     'depends': ['project'], 
     'data': [
         'views/project_task_views.xml',
