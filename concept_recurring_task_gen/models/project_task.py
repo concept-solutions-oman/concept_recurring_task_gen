@@ -58,8 +58,8 @@ class ProjectTask(models.Model):
 
     def write(self, vals):
         """Ensure is_recurrent syncs with recurring_task on update."""
-        if 'recurring_task' in vals and vals['recurring_task']:
-            vals['is_recurrent'] = True
+        if 'recurring_task' in vals:
+            vals['is_recurrent'] = bool(vals['recurring_task'])
         return super().write(vals)
 
     def _get_next_recurrence_date(self, base_date):
@@ -178,6 +178,7 @@ class ProjectTask(models.Model):
             # Prepare the preview list (only show the first 5)
             preview_list = all_dates[:5]
             date_items = "".join([f"<li>{d.strftime('%d/%m/%Y')}</li>" for d in preview_list])
+            ellipsis = "<li>...</li>" if len(all_dates) > 5 else ""
             
             # Prepare the total count message
             total_count_msg = ""
@@ -187,6 +188,6 @@ class ProjectTask(models.Model):
             # Build the final HTML message
             task.recurrence_preview = f"""
                 <p>A new task will be created on the following dates:</p>
-                <ul>{date_items}<li>...</li></ul>
+                <ul>{date_items}{ellipsis}</ul>
                 {total_count_msg}
             """

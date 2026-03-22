@@ -1,4 +1,5 @@
 <odoo>
+    <data>
     <record id="project_task_view_form_inherit_hide_recurrence" model="ir.ui.view">
     <field name="name">project.task.form.inherit.hide.recurrence</field>
     <field name="model">project.task</field>
@@ -13,6 +14,6 @@
 
     </field>
 </record>
-
+    </data>
 
 </odoo>
